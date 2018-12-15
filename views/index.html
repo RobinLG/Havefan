@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<html>
-<head>
 <title>Home</title>
 <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -13,7 +11,7 @@
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+<meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--fonts-->
@@ -22,185 +20,170 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//fonts-->
 <script type="text/javascript" src="/static/js/move-top.js"></script>
 <script type="text/javascript" src="/static/js/easing.js"></script>
-				<script type="text/javascript">
+<script type="text/javascript">
 					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){
+						$(".scroll").click(function(event){		
 							event.preventDefault();
 							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 						});
 					});
-					</script>
-
+</script>
+<script type="text/javascript">
+	function disp_prompt()
+	{
+		var name=prompt("请输入您的钱包地址","您的钱包地址");
+		if (!isNaN(name))
+		{
+			window.open("publish.html");
+		}
+		else
+		{
+			window.open("account.html");
+		}
+	}
+</script>
 </head>
 <body>
 	<!--header-->
-	<div class="header">
+	<div class="header-in">
 		<div class="container">
+			<div class="logo">
+				<h1><a href="index.html">有 饭</a></h1>
+			</div>
 			<div class="header-top">
 				<div class="header-top-in">
-
+					<ul class="header-grid">
+					</ul>
 					<div class="act">
-						<a href="#" class="done">Have fan</a>
 					</div>
 				<div class="clearfix"> </div>
 				</div>
-
+				<ul class="grid-header">
+				</ul>
 				<div class="clearfix"> </div>
 			</div>
-
 			<!---->
 			<div class="header-bottom">
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li class="active" ><a href="index.html" >主页  </a><label>- </label> </li>
+						<li  ><a href="index.html" >主页  </a><label>- </label> </li>
 						<li><a href="location.html" > 全部信息</a><label>- </label></li>
-						<li><a href="specials.html">发布信息 </a><label></li>
+						<li><a onclick="disp_prompt()">发布信息 </a></li>
 					</ul>
-					<!--script-->
-				<script>
-					$("span.menu").click(function(){
-						$(".top-nav ul").slideToggle(500, function(){
-						});
-					});
-			</script>
 				</div>
 					<div class="search">
 						<form>
-							<input type="text" value="搜索 ..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}" >
+							<input type="text" value="Search store here ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 							<input type="submit" value="">
 						</form>
 					</div>
 			<div class="clearfix"> </div>
 		</div>
 		<!---->
-
-	<div class="banner">
-		<div class="banner-in">
-		<!---->
-		<div class="wmuSlider example1">
-			   <div class="wmuSliderWrapper">
-				<article style="position: absolute; width: 100%; opacity: 0;">
-				   	<div class="banner-wrap">
-				   	      <h2>健康 享受</h2>
-						  <h5>美食</h5>
-						  <p>全都在 <span>Have fan 能找到你所需要的</span></p>
-				   	 </div>
-
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;">
-				   	<div class="banner-wrap">
-					  		<h2>Raesent coodo </h2>
-						  <h5>Mollis voluipun</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
-
-				   	 </div>
-
-			</article>
-			 <article style="position: absolute; width: 100%; opacity: 0;">
-				   	<div class="banner-wrap">
-				   	       <h2>Raesent coodo </h2>
-						  <h5>Mollis voluipun</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
-
-				   	 </div>
-
-			</article>
-			</div>
-		</div>
-		<!---->
-		  <script src="/static/js/jquery.wmuSlider.js"></script>
-			  <script>
-       			$('.example1').wmuSlider({
-					 pagination : false,
-				});
-   		     </script>
-		<!---->
-	</div>
-	</div>
 		</div>
 	</div>
 	<!---->
-	<div class="content">
 		<div class="container">
-		<div class="content-grid">
-			<div class="col-md-2 grid-food">
-			</div>
-			<!---->
-			<div class="col-md-8 food-grid">
-				<div class="cup">
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p1.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+			<div class="specials">
+				<div class="special-top">
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi2.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
+						<div class="details-in">
+							<a href="detail.html" class="details">详细</a>
+						</div>
+					</div>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
 							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p2.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi1.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
-							<a href="single.html" class="details">详细</a>
+							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p3.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi4.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
-							<a href="single.html" class="details">详细</a>
+							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
 					</div>
-
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p4.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+					<div class="clearfix"> </div>
+				</div>
+			<div class="special-top">
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi3.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
-							<a href="single.html" class="details">详细</a>
+							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p5.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi7.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
-							<a href="single.html" class="details">详细</a>
+							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
 					</div>
-					<div class="col-md-4 cup-in">
-						<a href="single.html"><img src="/static/images/p6.jpg" class="img-responsive" alt=""></a>
-						<p>明天在天府一街会有烤肉聚会，欢迎大家</p>
-						<span class="dollar">10XEM</span>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi6.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
 						<div class="details-in">
-							<a href="single.html" class="details">详细</a>
+							<a href="#" class="details">详细</a>
 						</div>
-						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-3 special-in">
+						<a href="detail.html" ><img src="/static/images/pi5.jpg" class="img-responsive" alt="">
+						
+							</a>
+						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
+						<p>10XEM</p>
+						<div class="details-in">
+							<a href="#" class="details">详细</a>
+						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<!---->
-					<div class="browse">
-						<p class="vit">输入关键字 ...</p>
-						<a href="single.html" class="more">浏览更多</a>
-						<div class="clearfix"> </div>
-						<div class="arrow">
-							<a href="#"><img src="/static/images/arrow.png" alt=""></a>
-						</div>
+				<div class="browse">
+					<p class="vit">输入关键字 ...</p>
+					<a href="detail.html" class="more">浏览更多</a>
+					<div class="clearfix"> </div>
+					<div class="arrow">
+						<a href="#"><img src="/static/images/arrow.png" alt=""></a>
 					</div>
+				</div>
 				<!---->
 			</div>
-			<div class="clearfix"> </div>
 		</div>
-		</div>
-	</div>
 	<!---->
 	<div class="footer">
 		<div class="container">
@@ -218,25 +201,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 				<div class="clearfix"> </div>
-		</div>
+		</div>	
 	</div>
-	 <script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear'
-					 		};
-							*/
-
-							$().UItoTop({ easingType: 'easeOutQuart' });
-
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>

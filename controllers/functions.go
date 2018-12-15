@@ -41,10 +41,13 @@ func (c *UserController) ShowIndex() {
 	c.TplName = "index.html"
 }
 
+func (c *UserController) ShowDetail() {
+	c.TplName = "detail.html"
+}
 
-
-
-
+func (c *UserController) ShowAccount() {
+	c.TplName = "account.html"
+}
 
 
 /*

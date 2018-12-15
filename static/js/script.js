@@ -1,5 +1,3 @@
-$(document).ready(function () {
-
 	// Load nem-browser library
 	var nem = require("nem-sdk").default;
 
@@ -77,13 +75,13 @@ $(document).ready(function () {
 				} else {
 					alert(res.message);
 					console.log(res);
-					//window.close("../views/detail.html");
-					//window.open("../views/index.html");
+					window.close("../views/detail.html");
+					window.open("../views/index.html");
 				}
 			}, function(err) {
 				alert(err);
 			});
-		},1000)
+		},3000)
 	}
 
 	// queryTxByAddrAndTxHash("TAV6OC3AUBFD73T7CFG2EQRE34D4EA355DTVJUDL", "722ec9844c23cbfc57d6d12b8f5a1378e679c20a52536770a5249d3724797eb0");
@@ -118,10 +116,10 @@ $(document).ready(function () {
 	});
 
 	// Call send function when click on send button
-	$("#send").click(function() {
-		send();
-	});
+	// $("#send").click(function() {
+	// 	send();
+	// 	console.log(send);
+	// });
 
 	// Initialization of fees in view
 	updateFee();
-});

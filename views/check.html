@@ -76,40 +76,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!---->
-	<div class="container">
-				<div class="contact">
-				<div class="contact-in">
-				<h2>发布菜单</h2>
-				<div class=" col-md-9 contact-left">
+    <div class="container">
+        <div class="account">
+            <h2>check</h2>
+            <form  action="/check" method="post">
+                <div>
+                    <span>手机号</span>
+                    <input name="mobile" id="mobile" type="text">
+                </div>
+                <input type="submit" value="发送验证码">
+            </form>
+        </div>
 
-                    <form action="/publish" method="post">
-                        <div>
-                            <span>时间</span>
-                            <input name="time" id="time" type="datetime-local" />
-                        </div>
-                        <div>
-                            <span>地点</span>
-                            <input name="location" id="location" type="text" class="textbox">
-                        </div>
-                        <div>
-                            <span>价格区间</span>
-                            <input name="price" id="price" type="text" class="textbox">
-                        </div>
-                        <div>
-                            <span>菜品</span>
-                            <textarea name="dishes" id="dishes"></textarea>
-                        </div>
-                        <div>
-                            <span><input type="submit" value="Submit"></span>
-                        </div>
-                    </form>
-				  </div>
-				<div class=" col-md-3 contact-right">
-				    </div>
-					  <div class="clearfix"></div>
-				 </div>
-      		</div>
-		    </div>
+    </div>
 
 
 	<!---->

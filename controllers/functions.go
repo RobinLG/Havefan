@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego/logs"
 	"robin/Havefan/models"
+	"robin/Havefan/util"
 )
 
 type UserController struct {
@@ -45,10 +46,53 @@ func (c *UserController) ShowDetail() {
 	c.TplName = "detail.html"
 }
 
-func (c *UserController) ShowAccount() {
-	c.TplName = "account.html"
+func (c *UserController) ShowCheck() {
+	c.TplName = "check.html"
 }
 
+func (c *UserController) Account() {
+	if c.Ctx.Request.Method == "POST" {
+		wallet   := c.GetString("wallet")
+		username := c.GetString("username")
+		idcard   := c.GetString("idcard")
+		mobile   := c.GetString("mobile")
+		verification := c.GetString("verification")
+		logs.Debug("Account - wallet:%s, username:%s, idcard:%s, mobile:%s, verification:%s", wallet, username, idcard, mobile, verification)
+
+		// Dynamic verification code is omitted here
+		if verification == "8888"{
+
+			c.Ctx.WriteString("<script>alert('SUCCESS');</script>")
+			//user := &models.User{Username:username, Password:password, Nickname:nickname, Location:location, Mobile:mobile, RecoverCode:""}
+			//logs.Debug(user.Username, user.Password, user.Nickname, user.Location, user.Mobile, user.RecoverCode)
+			//
+			//err := user.Create()
+			//if err != nil {
+			//	c.History("REGISTER ERROR", "")
+			//	logs.Debug(err)
+			//} else {
+			//	c.Ctx.WriteString("<script>alert('REGISTER SUCCESS');</script>")
+			//}
+			////logs.Debug("Insert return: %s", id)
+			//c.TplName = "login.html"
+		}
+
+
+	} else if c.Ctx.Request.Method == "GET" {
+		c.TplName = "account.html"
+	}
+}
+
+func (c *UserController) Check() {
+	mobile   := c.GetString("mobile")
+	logs.Debug("Check - mobile:%s", mobile)
+
+	c.Data["mobile"] = mobile
+
+	util.Smsmain(mobile)
+
+	c.TplName = "account.html"
+}
 
 /*
 

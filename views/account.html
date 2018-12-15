@@ -81,22 +81,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="account">
 		<h2>用户信息</h2>
 				<div class=" col-md-9 contact-left">
-					    <form >
+					    <form action="/account" method="post">
 					    	<div>
 								<span>钱包地址</span>
-								<input type="text">
+								<input name="wallet" id="wallet" type="text">
 						    </div>
 						    <div>
 								<span>姓名</span>
-						    	<input name="userEmail" type="text" class="textbox">
+						    	<input name="username" id="username" type="text" class="textbox">
 						    </div>
 						    <div>
 								<span>身份证号</span>
-						    	<input name="userEmail" type="text" class="textbox">
+						    	<input name="idcard" id="idcard" type="text" class="textbox">
 						    </div>
 						    <div>
-						    	<span>手机号</span>
-						    	<input type="password">
+						    	<span>手机验证码</span>
+						    	<input name="verification" id="verification" type="text">
+                                <input name="mobile" id="mobile" value={{.mobile}} type="text" style="display:none">
 							</div>
 							<div class="form-group">
 									<fieldset>
@@ -145,4 +146,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<script src="../static/js/nem-sdk.js"></script>
 	<script src="../static/js/script.js"></script>
+</body>
 </html>

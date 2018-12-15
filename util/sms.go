@@ -102,13 +102,13 @@ func SendSms(accessKeyID, accessSecret, phoneNumbers, signName, templateParam, t
 	return ssr.Code, nil
 }
 
-func Smsmain() string {
+func Smsmain(number string) string {
 	// Your Ali account accessKeyID
-	accessKeyID:="****"
+	accessKeyID:="LTAI72EsN8h83C49"
 	// Your Ali account accessSecret
-	accessSecret:="****"
+	accessSecret:="NWb48qGcMAQjA0s3ko6js2uoDxaTav"
 	// Registered mobile phone number
-	phoneNumbers:="****"
+	phoneNumbers:=number
 	// The sign name of Your Ali account (SMS service)
 	signName:="Robin"
 	// replace message template variable with json

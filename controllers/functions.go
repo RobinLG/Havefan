@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego/logs"
 	"robin/Havefan/models"
 	"robin/Havefan/util"
+	"strconv"
 )
 
 type UserController struct {
@@ -20,7 +21,7 @@ func (c *UserController) AddOrder() {
 		//mobile := c.GetString("mobile")
 		time := c.GetString("time")
 
-		order := &models.Order{Dishes: dishes, Price: price, Location: location, Address: "111", Mobile: "222", Time:time}
+		order := &models.Order{Dishes: dishes, Price: price, Location: location, Address: "111", Mobile: "222", Time:time, Flag:"0"}
 		logs.Debug(order.Dishes, order.Price, order.Location, order.Address, order.Mobile, order.Time)
 
 		err := order.Create()
@@ -113,6 +114,30 @@ func (c *UserController) Check() {
 	util.Smsmain(mobile)
 
 	c.TplName = "account.html"
+}
+
+func (c *UserController) UpdateFlagToOne() {
+	//txhashstring := c.GetString("txhash")
+	//txhash, err := strconv.Atoi(txhashstring)
+	txhash, err := strconv.Atoi("1")
+	if err != nil {
+		panic(err)
+	}
+
+	order := &models.Order{Txhash:txhash}
+	order.UpdateFlag("1")
+}
+
+func (c *UserController) UpdateFlagToTwo() {
+	//txhashstring := c.GetString("txhash")
+	//txhash, err := strconv.Atoi(txhashstring)
+	txhash, err := strconv.Atoi("1")
+	if err != nil {
+		panic(err)
+	}
+
+	order := &models.Order{Txhash:txhash}
+	order.UpdateFlag("2")
 }
 
 

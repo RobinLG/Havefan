@@ -13,6 +13,7 @@ type Order struct {
 	Address  string `json:"address"`
 	Mobile   string `json:"mobile"`
 	Time     string `json:"time"`
+	Flag     string `json:"flag"`
 }
 
 //return table name without prefix
@@ -37,5 +38,11 @@ func (r *Order) ReadDBOne(txhash int) (messageone []*Order, err error) {
 func (r *Order) Create() (err error) {
 	o := orm.NewOrm()
 	_, err = o.Insert(r)
+	return err
+}
+
+func (r *Order) UpdateFlag(flag string) (err error) {
+	o := orm.NewOrm()
+	_, err = o.Update(r, flag)
 	return err
 }

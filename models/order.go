@@ -27,6 +27,13 @@ func (r *Order) ReadDB() (message []*Order, err error) {
 	return messages, err
 }
 
+func (r *Order) ReadDBOne(txhash int) (messageone []*Order, err error) {
+	var message []*Order
+	orm.NewOrm().QueryTable("tb_order").Filter("txhash", txhash).RelatedSel().All(&message)
+	logs.Debug(message)
+	return message, err
+}
+
 func (r *Order) Create() (err error) {
 	o := orm.NewOrm()
 	_, err = o.Insert(r)

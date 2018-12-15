@@ -40,20 +40,31 @@ func (c *UserController) AddOrder() {
 
 func (c *UserController) ShowIndex() {
 
-	order := &models.Order{}
+	orders := &models.Order{}
 
-	if messages, err := order.ReadDB(); err != nil {
+	if messages, err := orders.ReadDB(); err != nil {
 		logs.Debug(err)
 		// Actually, here should be done a deal of error. But now, I deal it simplify.
 		panic(err)
 	} else {
 		c.Data["messages"] = messages
-		logs.Debug("showindex message:%s", messages)
+		logs.Debug("showindex messages:%s", messages)
 	}
 	c.TplName = "index.html"
 }
 
 func (c *UserController) ShowDetail() {
+
+	order := &models.Order{}
+
+	if message, err := order.ReadDBOne(1); err != nil {
+		logs.Debug(err)
+		// Actually, here should be done a deal of error. But now, I deal it simplify.
+		panic(err)
+	} else {
+		c.Data["message"] = message
+		logs.Debug("showindex message:%s", message)
+	}
 	c.TplName = "detail.html"
 }
 

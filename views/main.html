@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Backstage Management System</title>
+    <link rel="stylesheet" href="/static/plug/layui/css/layui.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<!-- Container Layout -->
+<div class="layui-layout layui-layout-admin">
+    <!-- Head -->
+    <div class="layui-header">
+        <div class="layui-main">
+            <!-- Logo -->
+            <a href="/" style="color: #c2c2c2; font-size: 18px; line-height: 60px;">Backstage Management System</a>
+            <!-- Horizontal navigation -->
+            <ul class="layui-nav" style="position: absolute; top: 0; right: 0; background: none;">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"> {{.Username}},Welcome！ </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="/admin/logout"> Log out </a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree " lay-filter="left-nav" style="border-radius: 0;">
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Body -->
+    <div class="layui-body">
+        <!-- Top switching card -->
+        <div class="layui-tab layui-tab-brief" lay-filter="top-tab" lay-allowClose="true" style="margin: 0;">
+            <ul class="layui-tab-title"></ul>
+            <div class="layui-tab-content"></div>
+        </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="layui-footer" style="text-align: center; line-height: 44px;">
+        Copyright ©Robin
+    </div>
+</div>
+<script src="/static/plug/layui/lay/lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/static/plug/layui/layui.js"></script>
+<script type="text/javascript">
+    /**
+     * Global configuration of the layui
+     */
+    layui.config({
+        base: '/static/js/'
+    });
+
+    layui.use('form', function() {
+        var $ = layui.jquery,
+                form = layui.form();
+    });
+
+    /**
+     * Initialize the system framework
+     */
+    layui.use(['cms'], function() {
+        var cms = layui.cms('left-nav', 'top-tab');
+        cms.addNav([
+            { id: 1, pid: 0, node: '<span style=" font-size: 16px"><i class="layui-icon">&#xe620;</i>About Me</span>', url: '#' },
+            { id: 3, pid: 1, node: '&nbsp;&nbsp;&nbsp;Message', url: '' },
+            { id: 5, pid: 1, node: '&nbsp;&nbsp;&nbsp;Reset Password', url: {{.url}} },
+            { id: 7, pid: 1, node: '&nbsp;&nbsp;&nbsp;System Settings', url: '' },
+            { id: 2, pid: 0, node: '<span style=" font-size: 16px"><i class="layui-icon">&#xe63c;</i> News Center</span>', url: '#' },
+            { id: 6, pid: 2, node: '&nbsp;&nbsp;&nbsp;Bulletin Board', url: {{.bulletin}} },
+        ], 0, 'id', 'pid', 'node', 'url');
+        cms.bind(60 + 41 + 20 + 44); //Head height + Top toggle card header height + Switch card content at the top padding + Bottom height
+        cms.clickLI(1);
+
+    });
+
+    function addTab(title, src, id,closeId){
+        if(closeId){
+//                  debugger;
+            closeTab(closeId);
+        }
+        layui.use(['cms'], function() {
+            var cms = layui.cms('left-nav', 'top-tab');
+            cms.addTab(title,src,id);
+        });
+    }
+
+    function closeTab(id,refreshId){
+        layui.use(['cms'], function() {
+            var cms = layui.cms('left-nav', 'top-tab');
+            cms.closeTab(id,refreshId);
+        });
+    }
+
+</script> </body> </html>

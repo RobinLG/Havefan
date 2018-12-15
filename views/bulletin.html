@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/plug/layui/css/layui.css">
+    <style>
+
+        .main {
+            margin: 0 auto;
+            width: 400px;
+            border: 1px solid;
+            border-color: #eeeeee;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+<script type="text/javascript" src="/static/plug/layui/layui.js"></script>
+<div class="main layui-clear">
+    <form>
+        <div class="fly-panel fly-panel-user" pad20>
+            <div class="layui-tab layui-tab-brief">
+
+                <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding-top: 20px; padding-left: 50px;  ">
+
+                    <div class="layui-form layui-form-pane" id="app">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+<script>
+    //Demo
+    layui.use('form', function () {
+    });
+</script>
+
+<script>
+    var app = document.getElementById('app')
+    var titles = {{ .titles }}
+    var contects = {{ .contects }}
+
+    function getData(){
+        var html = ''
+        for (var i = 0; i < titles.length; i++) {
+            html += setDiv(titles[i], contects[i])
+        }
+        app.innerHTML = html
+    }
+
+    function setDiv(title, contect){
+        var div = '<div>' + title +' : ' + contect +'</div>'
+        return div
+    }
+
+    window.onload = getData()
+</script>
+
+</html>

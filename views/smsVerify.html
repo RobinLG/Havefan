@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>smsVerify</title>
+    <link rel="stylesheet" href="/static/plug/layui/css/layui.css">
+    <style>
+
+        .main {
+            margin: 0 auto;
+            width: 400px;
+            border: 1px solid;
+            border-color: #eeeeee;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+    </style>
+
+</head>
+<body>
+<script type="text/javascript" src="/static/plug/layui/layui.js"></script>
+<div class="main layui-clear">
+    <form action="/smsVerify" method="post">
+        <div class="fly-panel fly-panel-user" pad20>
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">Account Register</li>
+                </ul>
+                <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding-top: 20px; padding-left: 50px;  ">
+
+                    <div class="layui-form layui-form-pane">
+
+                        <div class="layui-form-item" type="hidden" >
+                            <label class="layui-form-label">Username</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" required lay-verify="username"
+                                       placeholder="username" autocomplete="off" class="layui-input" value={{.username}}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" type="hidden">
+                            <label class="layui-form-label">Password</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="password" required lay-verify="password"
+                                       placeholder="password" autocomplete="off" class="layui-input" value={{.password}}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" type="hidden">
+                            <label class="layui-form-label">Nickname</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="nickname" required lay-verify="nickanme"
+                                       placeholder="nickname" autocomplete="off" class="layui-input" value={{.nickname}}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" type="hidden">
+                            <label class="layui-form-label">Mobile</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="mobile" required lay-verify="phone"
+                                       placeholder="mobile" autocomplete="off" class="layui-input" value={{.mobile}}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" type="hidden">
+                            <label class="layui-form-label">Location</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="location" required lay-verify="location"
+                                       placeholder="location" autocomplete="off" class="layui-input" value={{.location}}>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMS code</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="verification" required lay-verify="verification"
+                                       placeholder="verification" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <button lay-submit class="layui-btn btn-submit" style="width: 300px; border-radius:3px"
+                                    lay-submit=""
+                                    lay-filter="sub">Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</body>
+<script>
+    //Demo
+    layui.use('form', function () {
+    });
+</script>
+</html>

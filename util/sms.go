@@ -104,11 +104,11 @@ func SendSms(accessKeyID, accessSecret, phoneNumbers, signName, templateParam, t
 
 func Smsmain() string {
 	// Your Ali account accessKeyID
-	accessKeyID:="LTAI72EsN8h83C49"
+	accessKeyID:="****"
 	// Your Ali account accessSecret
-	accessSecret:="NWb48qGcMAQjA0s3ko6js2uoDxaTav"
+	accessSecret:="****"
 	// Registered mobile phone number
-	phoneNumbers:="18344050133"
+	phoneNumbers:="****"
 	// The sign name of Your Ali account (SMS service)
 	signName:="Robin"
 	// replace message template variable with json

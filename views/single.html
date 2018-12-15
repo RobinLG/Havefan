@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Detail</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<title>Home</title>
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,8 +18,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.useso.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -35,17 +35,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-in">
 		<div class="container">
 			<div class="logo">
-				<h1><a href="index.html">有 饭</a></h1>
+				<h1><a href="index.html">Food Shop</a></h1>
 			</div>
 			<div class="header-top">
 				<div class="header-top-in">
 					<ul class="header-grid">
+						<li ><a href="account.html">My Account   </a> <label>/</label></li>
+						<li ><a href="login.html">  Login </a> </li>		
 					</ul>
 					<div class="act">
+						<a href="#" class="done">Donec actortor </a>
 					</div>
 				<div class="clearfix"> </div>
 				</div>
 				<ul class="grid-header">
+					<li><a href="account.html">My Account</a> <label>/</label></li>
+					<li><a href="#">My Cart</a> <label>/</label></li>
+					<li><a href="checkout.html">  Checkout </a> </li>		
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -54,9 +60,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="top-nav">
 					<span class="menu"> </span>
 					<ul>
-						<li  ><a href="index.html" >主页  </a><label>- </label> </li>
-						<li><a href="location.html" > 全部信息</a><label>- </label></li>
-						<li><a href="publish.html">发布信息 </a></li>
+						<li  ><a href="index.html" >Home  </a><label>- </label> </li>
+						<li><a href="location.html" > Locations</a><label>- </label></li>
+						<li><a href="specials.html">Specials </a><label>- </label></li>
+						<li><a href="404.html" > Order Online</a><label>- </label></li>
+						<li><a href="contact.html">Contacts</a></li>
 					</ul>
 					<!--script-->
 				<script>
@@ -75,6 +83,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 		<!---->
+		
+
 		</div>
 	</div>
 	<!---->
@@ -83,14 +93,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-9  single-top">
 				<div class="text-in">					
 						<div class="single-men">
-							<img class="img-responsive" src="images/sin.jpg" alt="" />
+							<img class="img-responsive" src="/static/images/sin.jpg" alt="" />
 							<h5>Lorem Ipsum is simply dummy text</h5>
 							<p>Quisque euismod velit luctus tellus dignissim, sed aliquam tellus porttitor. Suspendisse feugiat, orci sed iaculis tristique, est neque tempus sem, ut iaculis mi augue sed enim. Nunc nec consectetur mi. Aenean nisl augue, laoreet vel justo nec, auctor congue metus. Vestibulum aliquet, eros non iaculis lobortis, velit lectus imperdiet turpis, id blandit nisi mauris nec turpis.
                        Quisque euismod velit luctus tellus dignissim, sed aliquam tellus porttitor. Suspendisse feugiat, orci sed iaculis tristique, est neque tempus sem, ut iaculis mi augue sed enim. Nunc nec consectetur mi. Aenean nisl augue, laoreet vel justo nec, auctor congue metus. Vestibulum aliquet, eros non iaculis lobortis, velit lectus imperdiet turpis, id blandit nisi mauris nec turpis.</p>
 						</div>
 						 <ul class="comment-list">
 		  		    	<h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a></h5>
-		  		         <li><img src="images/avatar.png" class="img-responsive" alt="">
+		  		         <li><img src="/static/images/avatar.png" class="img-responsive" alt="">
 		  		           <div class="desc">
 		  		        	<p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
 		  		           </div>
@@ -98,48 +108,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  		         </li>
 		  		     </ul>
                     <div class="comments-area">
-		<div class="col-md-6">
-			<div class="form-group">
-				<fieldset>
-					<label>Recipient</label>
-					<input class="form-control" type="text" id="recipient"/>
-				</fieldset>
-			</div>
-			<div class="form-group">
-				<fieldset>
-					<label>Amount</label>
-					<input  class="form-control" type="text" id="amount"/>
-				</fieldset>
-			</div>
-			<div class="form-group">
-				<fieldset>
-					<label>Message</label>
-					<textarea  class="form-control" rows="5" cols="25" id="message"></textarea>
-				</fieldset>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="form-group">
-				<fieldset>
-					<label>Fee</label>
-					<p class="form-control-static" type="text">
-						<span id="fee">
-						</span> <small><b>XEM</b></small>
-					</p>
-				</fieldset>
-			</div>
-			<div class="form-group">
-				<fieldset>
-					<label>Private key</label>
-					<input  class="form-control" type="password" id="privateKey" />
-				</fieldset>
-			</div>
-			<div class="form-group">
-				<fieldset>
-					<button class="btn btn-success" style="width:100%;" id="send">预定</button>
-				</fieldset>
-			</div>
-		</div>
+		  		        	<h3>Add New Comment</h3>
+							<form>
+								<p>
+									<label>Name</label>
+									
+									<input type="text" value="">
+								</p>
+								<p>
+									<label>Email</label>
+									
+									<input type="text" value="">
+								</p>
+								<p>
+									<label>Website</label>
+									<input type="text" value="">
+								</p>
+								<p>
+									<label>Subject</label>
+									
+									<textarea></textarea>
+								</p>
+								<div class="sub-in">
+									<input type="submit" value="Submit Comment">
+								</div>
+							</form>
 					  </div>
 				</div>
 				
@@ -160,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="store-right">
 							<h6>Top rated products</h6>
 							<div class="product">
-								<img class="img-responsive fashion" src="images/st1.jpg" alt=""/>
+								<img class="img-responsive fashion" src="/static/images/st1.jpg" alt=""/>
 							<div class="grid-product">
 								<a href="#" class="elit">consectetuer adipiscing elit</a>
 								<span class="price price-in"><small>$15.00</small> $10.00</span>
@@ -168,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 							</div>
 							<div class="product">
-								<img class="img-responsive fashion" src="images/st2.jpg" alt=""/>
+								<img class="img-responsive fashion" src="/static/images/st2.jpg" alt=""/>
 							<div class="grid-product">
 								<a href="#" class="elit">consectetuer adipiscing elit</a>
 								<span class="price price-in"><small>$15.00</small> $10.00</span>
@@ -176,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 							</div>
 							<div class="product">
-								<img class="img-responsive fashion" src="images/st3.jpg" alt=""/>
+								<img class="img-responsive fashion" src="/static/images/st3.jpg" alt=""/>
 							<div class="grid-product">
 								<a href="#" class="elit">consectetuer adipiscing elit</a>
 								<span class="price price-in"><small>$150.00</small> $10.00</span>
@@ -184,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 							</div>
 							<div class="product">
-								<img class="img-responsive fashion" src="images/st4.jpg" alt=""/>
+								<img class="img-responsive fashion" src="/static/images/st4.jpg" alt=""/>
 							<div class="grid-product">
 								<a href="#" class="elit">consectetuer adipiscing elit</a>
 								<span class="price price-in"><small>$15.00</small> $10.00</span>
@@ -200,12 +193,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 		<div class="col-md-8 footer-bottom ">
-		<h4>说明</h4>
-		<p>****</p>
+		<h4>Aenean condimentum suscipit dolor</h4>
+		<p>Proin ullamcorper urna quis velit mollis molestie suscipit nisl consectetur
+uspendisse venenatis dolor et nunc iaculis ege</p>
+		<p class="footer-grid">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
 
 		</div>
 			<div class="col-md-4 footer-bottom ">
-				<h4>分享</h4>
+				<h4>Muscipit dolor</h4>
 				<ul class="social-icons">
 					<li><a href="#"><span> </span> </a></li>
 					<li class="tin"><a href="#"><span> </span></a></li>
@@ -215,7 +210,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<script src="js/nem-sdk.js"></script>
-	<script src="js/script.js"></script>
+	 <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
 </html>

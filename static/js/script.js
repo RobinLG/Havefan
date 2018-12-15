@@ -109,7 +109,7 @@ $(document).ready(function () {
 
 	// Call send function when click on send button
 	$("#send").click(function() {
-		hash();
+		send();
 	});
 
 	// Initialization of fees in view

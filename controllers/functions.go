@@ -43,14 +43,26 @@ func (c *UserController) ShowIndex() {
 
 	orders := &models.Order{}
 
+	var addresses []string;
+	var flags []string;
+	var prices []string;
+
 	if messages, err := orders.ReadDB(); err != nil {
 		logs.Debug(err)
 		// Actually, here should be done a deal of error. But now, I deal it simplify.
 		panic(err)
 	} else {
-		c.Data["messages"] = messages
 		logs.Debug("showindex messages:%s", messages)
+		for _, v := range messages {
+			addresses = append(addresses, v.Address)
+			flags = append(flags, v.Flag)
+			prices = append(prices, v.Price)
+		}
 	}
+	c.Data["addresses"] = addresses
+	c.Data["flags"] = flags
+	c.Data["prices"] = prices
+
 	c.TplName = "index.html"
 }
 

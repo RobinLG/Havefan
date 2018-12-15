@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	background-size:cover;
 }
 .logo h1{
-	font-size:3.5em;
+	font-size:5em;
 	font-family: 'Lobster Two', cursive;
 	text-align:center;
 }
@@ -902,7 +902,7 @@ p.cart a:hover {
 /*--contact--*/
 .contact-in h2{
 	margin:0.5em 0;
-	font-size:4em;
+	font-size:3em;
 	color:#aa381e;
 	text-align:center;
 	font-family: 'Lobster Two', cursive;
@@ -998,7 +998,7 @@ p.cart a:hover {
 /*----*/
 .account h2{
 	padding:0.5em 0;
-	font-size:4em;
+	font-size:3em;
 	color:#aa381e;
 	text-align:center;
 	font-family: 'Lobster Two', cursive;

@@ -74,6 +74,8 @@ $(document).ready(function () {
 					alert(res.message);
 				} else {
 					alert(res.message);
+					window.close("../views/detail.html");
+					window.open("../views/index.html");
 				}
 			}, function(err) {
 				alert(err);

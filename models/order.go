@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/astaxie/beego/orm"
+	"github.com/astaxie/beego/logs"
 )
 
 type Order struct {
@@ -19,10 +20,11 @@ func (r *Order) TableName() string {
 	return TableName("order")
 }
 
-func (r *Order) ReadDB() (err error) {
-	o := orm.NewOrm()
-	err = o.Read(r)
-	return err
+func (r *Order) ReadDB() (message []*Order, err error) {
+	var messages []*Order
+	orm.NewOrm().QueryTable("tb_order").RelatedSel().All(&messages)
+	logs.Debug(messages)
+	return messages, err
 }
 
 func (r *Order) Create() (err error) {

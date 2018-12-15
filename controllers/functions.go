@@ -39,6 +39,17 @@ func (c *UserController) AddOrder() {
 }
 
 func (c *UserController) ShowIndex() {
+
+	order := &models.Order{}
+
+	if messages, err := order.ReadDB(); err != nil {
+		logs.Debug(err)
+		// Actually, here should be done a deal of error. But now, I deal it simplify.
+		panic(err)
+	} else {
+		c.Data["messages"] = messages
+		logs.Debug("showindex message:%s", messages)
+	}
 	c.TplName = "index.html"
 }
 

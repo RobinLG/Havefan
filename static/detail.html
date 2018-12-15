@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
+<title>Detail</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -108,31 +108,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  		         </li>
 		  		     </ul>
                     <div class="comments-area">
-		  		        	<h3>Add New Comment</h3>
-							<form>
-								<p>
-									<label>Name</label>
-									
-									<input type="text" value="">
-								</p>
-								<p>
-									<label>Email</label>
-									
-									<input type="text" value="">
-								</p>
-								<p>
-									<label>Website</label>
-									<input type="text" value="">
-								</p>
-								<p>
-									<label>Subject</label>
-									
-									<textarea></textarea>
-								</p>
-								<div class="sub-in">
-									<input type="submit" value="Submit Comment">
-								</div>
-							</form>
+		<div class="col-md-6">
+			<div class="form-group">
+				<fieldset>
+					<label>Recipient</label>
+					<input class="form-control" type="text" id="recipient"/>
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Amount</label>
+					<input  class="form-control" type="text" id="amount"/>
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Message</label>
+					<textarea  class="form-control" rows="5" cols="25" id="message"></textarea>
+				</fieldset>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<fieldset>
+					<label>Fee</label>
+					<p class="form-control-static" type="text">
+						<span id="fee">
+						</span> <small><b>XEM</b></small>
+					</p>
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<label>Private key</label>
+					<input  class="form-control" type="password" id="privateKey" />
+				</fieldset>
+			</div>
+			<div class="form-group">
+				<fieldset>
+					<button class="btn btn-success" style="width:100%;" id="send">Send</button>
+				</fieldset>
+			</div>
+		</div>
 					  </div>
 				</div>
 				
@@ -193,14 +210,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 		<div class="col-md-8 footer-bottom ">
-		<h4>Aenean condimentum suscipit dolor</h4>
-		<p>Proin ullamcorper urna quis velit mollis molestie suscipit nisl consectetur
-uspendisse venenatis dolor et nunc iaculis ege</p>
-		<p class="footer-grid">Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+		<h4>说明</h4>
+		<p>****</p>
 
 		</div>
 			<div class="col-md-4 footer-bottom ">
-				<h4>Muscipit dolor</h4>
+				<h4>分享</h4>
 				<ul class="social-icons">
 					<li><a href="#"><span> </span> </a></li>
 					<li class="tin"><a href="#"><span> </span></a></li>
@@ -210,23 +225,7 @@ uspendisse venenatis dolor et nunc iaculis ege</p>
 				<div class="clearfix"> </div>
 		</div>	
 	</div>
-	 <script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
-							$().UItoTop({ easingType: 'easeOutQuart' });
-							
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-
-</body>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script src="js/nem-sdk.js"></script>
+	<script src="js/script.js"></script>
 </html>

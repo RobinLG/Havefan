@@ -21,7 +21,7 @@ func Init() {
 	orm.RegisterDataBase("default", "mysql", dsn)
 	// add User to orm
 	orm.RegisterModel(new(Order))
-	orm.RegisterModel(new(Bulletin))
+	orm.RegisterModel(new(Account))
 
 }
 

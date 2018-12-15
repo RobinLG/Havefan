@@ -53,28 +53,27 @@ func (c *UserController) ShowCheck() {
 func (c *UserController) Account() {
 	if c.Ctx.Request.Method == "POST" {
 		wallet   := c.GetString("wallet")
-		username := c.GetString("username")
-		idcard   := c.GetString("idcard")
+		UserIdHash := c.GetString("useridhash")
 		mobile   := c.GetString("mobile")
 		verification := c.GetString("verification")
-		logs.Debug("Account - wallet:%s, username:%s, idcard:%s, mobile:%s, verification:%s", wallet, username, idcard, mobile, verification)
+		logs.Debug("Account - wallet:%s, UserIdHash:%s, mobile:%s, verification:%s", wallet, UserIdHash, mobile, verification)
 
 		// Dynamic verification code is omitted here
 		if verification == "8888"{
 
-			c.Ctx.WriteString("<script>alert('SUCCESS');</script>")
-			//user := &models.User{Username:username, Password:password, Nickname:nickname, Location:location, Mobile:mobile, RecoverCode:""}
-			//logs.Debug(user.Username, user.Password, user.Nickname, user.Location, user.Mobile, user.RecoverCode)
-			//
-			//err := user.Create()
-			//if err != nil {
-			//	c.History("REGISTER ERROR", "")
-			//	logs.Debug(err)
-			//} else {
-			//	c.Ctx.WriteString("<script>alert('REGISTER SUCCESS');</script>")
-			//}
-			////logs.Debug("Insert return: %s", id)
-			//c.TplName = "login.html"
+			account := &models.Account{Wallet:wallet, Useridhash:UserIdHash, Mobile:mobile}
+			logs.Debug("wallet:%s, useridhash:%s, mobile:%s", account.Wallet, account.Useridhash, account.Mobile)
+
+			err := account.Create()
+			if err != nil {
+				//c.History("REGISTER ERROR", "")
+				c.Ctx.WriteString("<script>alert('ERROR');</script>")
+				logs.Debug(err)
+			} else {
+				c.Ctx.WriteString("<script>alert('REGISTER SUCCESS');</script>")
+			}
+			//logs.Debug("Insert return: %s", id)
+			c.TplName = "index.html"
 		}
 
 
@@ -93,6 +92,7 @@ func (c *UserController) Check() {
 
 	c.TplName = "account.html"
 }
+
 
 /*
 

@@ -1,10 +1,10 @@
 package main
 
 import (
-	_ "robin/unity/routers"
+	_ "robin/Havefan/routers"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/astaxie/beego"
-	"robin/unity/models"
+	"robin/Havefan/models"
 	"github.com/astaxie/beego/logs"
 )
 

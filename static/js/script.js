@@ -3,7 +3,7 @@ $(document).ready(function () {
 	// Load nem-browser library
 	var nem = require("nem-sdk").default;
 
-    // Create an NIS endpoint object
+	// Create an NIS endpoint object
 	var endpoint = nem.model.objects.create("endpoint")(nem.model.nodes.defaultTestnet, nem.model.nodes.defaultPort);
 
 	// Get an empty un-prepared transfer transaction object
@@ -16,8 +16,8 @@ $(document).ready(function () {
 	$("#amount").val("0");
 
 	/**
-     * Function to update our fee in the view
-     */
+	 * Function to update our fee in the view
+	 */
 	function updateFee() {
 		// Check for amount errors
 		if(undefined === $("#amount").val() || !nem.utils.helpers.isTextAmountValid($("#amount").val())) return alert('Invalid amount !');
@@ -39,8 +39,8 @@ $(document).ready(function () {
 	}
 
 	/**
-     * Build transaction from form data and send
-     */
+	 * Build transaction from form data and send
+	 */
 	function send() {
 		// Check form for errors
 		if(!$("#privateKey").val() || !$("#recipient").val()) return alert('Missing parameter !');
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 		// Check private key for errors
 		if (common.privateKey.length !== 64 && common.privateKey.length !== 66) return alert('Invalid private key, length must be 64 or 66 characters !');
-    	if (!nem.utils.helpers.isHexadecimal(common.privateKey)) return alert('Private key must be hexadecimal only !');
+		if (!nem.utils.helpers.isHexadecimal(common.privateKey)) return alert('Private key must be hexadecimal only !');
 
 		// Set the cleaned amount into transfer transaction object
 		transferTransaction.amount = nem.utils.helpers.cleanTextAmount($("#amount").val());
@@ -67,36 +67,51 @@ $(document).ready(function () {
 		var transactionEntity = nem.model.transactions.prepare("transferTransaction")(common, transferTransaction, nem.model.network.data.testnet.id);
 
 		// Serialize transfer transaction and announce
-		window.setTimeout(()=>{
+		setTimeout(()=>{
 			nem.model.transactions.send(common, transactionEntity, endpoint).then(function(res){
 				// If code >= 2, it's an error
 				if (res.code >= 2) {
 					alert(res.message);
 				} else {
 					alert(res.message);
+					window.close("../views/detail.html");
+					window.open("../views/index.html");
 				}
 			}, function(err) {
 				alert(err);
 			});
-		},3000);
+		},1000)
+	}
+
+	function queryAllTx(Addr, ) {
+		nem.com.requests.account.transactions.all(endpoint, Addr).then(function(res) {
+			console.log("\nAll transactions:");
+			console.log(res);
+			return res;
+		}, function(err) {
+			console.error(err);
+		});
+	}
+
+	function hash(data){
+		return log(md5(data)); 
 	}
 
 	// On amount change we update fee in view
 	$("#amount").on('change keyup paste', function() {
-	    updateFee();
+		updateFee();
 	});
 
 	// On message change we update fee in view
 	$("#message").on('change keyup paste', function() {
-	    updateFee();
+		updateFee();
 	});
 
 	// Call send function when click on send button
 	$("#send").click(function() {
-	  send();
+		send();
 	});
 
 	// Initialization of fees in view
 	updateFee();
-
 });

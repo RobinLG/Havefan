@@ -65,6 +65,8 @@ $(document).ready(function () {
 
 		// Prepare the updated transfer transaction object
 		var transactionEntity = nem.model.transactions.prepare("transferTransaction")(common, transferTransaction, nem.model.network.data.testnet.id);
+		console.log("transactionEntity");
+		console.log(transactionEntity);
 
 		// Serialize transfer transaction and announce
 		setTimeout(()=>{
@@ -74,8 +76,9 @@ $(document).ready(function () {
 					alert(res.message);
 				} else {
 					alert(res.message);
-					window.close("../views/detail.html");
-					window.open("../views/index.html");
+					console.log(res);
+					//window.close("../views/detail.html");
+					//window.open("../views/index.html");
 				}
 			}, function(err) {
 				alert(err);
@@ -83,10 +86,21 @@ $(document).ready(function () {
 		},1000)
 	}
 
-	function queryAllTx(Addr, ) {
+	// queryTxByAddrAndTxHash("TAV6OC3AUBFD73T7CFG2EQRE34D4EA355DTVJUDL", "722ec9844c23cbfc57d6d12b8f5a1378e679c20a52536770a5249d3724797eb0");
+	function queryTxByAddrAndTxHash(Addr, TxHash) {
 		nem.com.requests.account.transactions.all(endpoint, Addr).then(function(res) {
 			console.log("\nAll transactions:");
 			console.log(res);
+			res.data.forEach(element => {
+				console.log(element.meta.hash.data);
+				if (element.meta.hash.data == TxHash) {
+					var payload = element.transaction.message.payload
+					console.log(payload);
+					return payload;
+					//console.log(CryptoJS.lib.WordArray.create(temp, uaLength););
+				}
+				
+			});
 			return res;
 		}, function(err) {
 			console.error(err);
@@ -94,7 +108,7 @@ $(document).ready(function () {
 	}
 
 	function hash(data){
-		return log(md5(data)); 
+		return md5(data); 
 	}
 
 	// On amount change we update fee in view

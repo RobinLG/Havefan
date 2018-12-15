@@ -46,6 +46,7 @@ func (c *UserController) ShowIndex() {
 	var addresses []string;
 	var flags []string;
 	var prices []string;
+	var length int;
 
 	if messages, err := orders.ReadDB(); err != nil {
 		logs.Debug(err)
@@ -58,10 +59,12 @@ func (c *UserController) ShowIndex() {
 			flags = append(flags, v.Flag)
 			prices = append(prices, v.Price)
 		}
+		length = len(addresses)
 	}
 	c.Data["addresses"] = addresses
 	c.Data["flags"] = flags
 	c.Data["prices"] = prices
+	c.Data["length"] = length
 
 	c.TplName = "index.html"
 }

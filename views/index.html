@@ -26,6 +26,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							event.preventDefault();
 							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 						});
+						var address = {{.addresses}};
+						var len = {{.length}};
+						var price = {{.prices}};
+						var i,j;
+						var state = {{.flags}};
+						for(i=len-1,j=1; i >= len - 8; i--,j++)
+						{
+						    var str = address[i];
+                            document.getElementById("name"+j).innerText=str;
+                            document.getElementById("price"+j).innerText=price[i];
+                            switch (state[i]) {
+								case "0":
+								    document.getElementById("state"+j).innerText="预订";
+								    break;
+								case "1":
+                                    document.getElementById("state"+j).innerText="评价";
+								    break;
+								case "2":
+                                    document.getElementById("state"+j).innerText="查看";
+								    break;
+							}
+						}
+
+						//alert((address[0]));
 					});
 </script>
 <script type="text/javascript">
@@ -90,40 +114,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="/detail" ><img src="../static/images/pi2.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="/detail">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="/detail" id = "name1">烤肉大餐——{{.length}}</a></h5>
+						<p id = "price1">10XEM</p>
 						<div class="details-in">
-							<a href="/detail" class="details">详细</a>
+							<a href="/detail" class="details" id = "state1">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name2">烤肉大餐——天府一街</a></h5>
+						<p id = "price2">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state2">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi1.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name3">烤肉大餐——天府一街</a></h5>
+						<p id = "price3">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state3">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi4.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name4">烤肉大餐——天府一街</a></h5>
+						<p id = "price4">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state4">详细</a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
@@ -133,40 +157,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="detail.html" ><img src="../static/images/pi3.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name5">烤肉大餐——天府一街</a></h5>
+						<p id = "price5">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state5">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi7.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name6">烤肉大餐——天府一街</a></h5>
+						<p id = "price6">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state6">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi6.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name7">烤肉大餐——天府一街</a></h5>
+						<p id = "price7">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state7">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
 						<a href="detail.html" ><img src="../static/images/pi5.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="detail.html">烤肉大餐——天府一街</a></h5>
-						<p>10XEM</p>
+						<h5><a href="detail.html" id = "name8">烤肉大餐——天府一街</a></h5>
+						<p id = "price8">10XEM</p>
 						<div class="details-in">
-							<a href="#" class="details">详细</a>
+							<a href="#" class="details" id = "state8">详细</a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
@@ -174,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!---->
 				<div class="browse">
 					<p class="vit">输入关键字 ...</p>
-					<a href="detail.html" class="more">{{.addresses}}{{.flags}}</a>
+					<a href="detail.html" class="more">浏览更多</a>
 					<div class="clearfix"> </div>
 					<div class="arrow">
 						<a href="#"><img src="../static/images/arrow.png" alt=""></a>

@@ -107,10 +107,6 @@ $(document).ready(function () {
 		});
 	}
 
-	function hash(data){
-		return md5(data); 
-	}
-
 	// On amount change we update fee in view
 	$("#amount").on('change keyup paste', function() {
 		updateFee();

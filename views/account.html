@@ -27,8 +27,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 						});
 					});
-					</script>
+	function hash(data){
+		return md5(data); 
+	}
+	var name, pwd;
+	function changename()
+	{
+		name = document.getElementById("username").value;
+		//console.log(name);
+		if((name != null) && (pwd != null))
+		{
+			console.log(hash(name+pwd));
 
+		}
+	}
+	function changepwd()
+	{
+		pwd = document.getElementById("idcard").value;
+		//console.log(pwd);
+		if((name != null) && (pwd != null))
+		{
+			
+			console.log(hash(name+pwd));
+			document.getElementById("message").value = hash(name+pwd);
+		}
+	}
+	function press()
+	{
+		document.getElementById("insql").click();
+	}
+</script>
 </head>
 <body>
 	<!--header-->
@@ -88,11 +116,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    </div>
 						    <div>
 								<span>姓名</span>
-						    	<input name="username" id="username" type="text" class="textbox">
+						    	<input name="username" id="username" type="text" class="textbox" onchange="changename()">
 						    </div>
 						    <div>
 								<span>身份证号</span>
-						    	<input name="idcard" id="idcard" type="text" class="textbox">
+						    	<input name="idcard" id="idcard" type="text" class="textbox" onchange="changepwd()">
 						    </div>
 						    <div>
 						    	<span>手机验证码</span>
@@ -113,7 +141,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<input type="password" id="privateKey" />
 							</div>
 						   	<div>
-						   		<span><input type="submit" value="提交"></span>
+								<a class="btn btn-success" style="width:100%;" id="send" onclick="press()">提交</a>
+						   		<span><input type="submit" value="提交" id="insql" style="visibility: hidden;"></span>
 						  	</div>
 						  	<input class="form-control" type="text" id="recipient" value="TAV6OC3AUBFD73T7CFG2EQRE34D4EA355DTVJUDL" style="visibility: hidden;"/>
 							<input  class="form-control" type="text" id="amount" value=0 style="visibility: hidden;"/>

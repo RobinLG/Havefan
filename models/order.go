@@ -5,7 +5,7 @@ import (
 )
 
 type Order struct {
-	Txhash   string `orm:"pk"`
+	Txhash   int `orm:"pk"`
 	Dishes   string `json:"dishes"`
 	Price    string `json:"price"`
 	Location string `json:"location"`

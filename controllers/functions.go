@@ -19,26 +19,27 @@ func (c *UserController) AddOrder() {
 		//mobile := c.GetString("mobile")
 		time := c.GetString("time")
 
-		order := &models.Order{Txhash: "7788", Dishes: dishes, Price: price, Location: location, Address: "111", Mobile: "222", Time:time}
-		logs.Debug(order.Txhash, order.Dishes, order.Price, order.Location, order.Address, order.Mobile, order.Time)
+		order := &models.Order{Dishes: dishes, Price: price, Location: location, Address: "111", Mobile: "222", Time:time}
+		logs.Debug(order.Dishes, order.Price, order.Location, order.Address, order.Mobile, order.Time)
 
 		err := order.Create()
 		if err != nil {
 			//c.History("ADD ERROR", "")
-			c.Ctx.WriteString("<script>alert('ADD xxx');</script>")
+			c.Ctx.WriteString("<script>alert('ERROR');</script>")
 			logs.Debug(err)
 		} else {
 			c.Ctx.WriteString("<script>alert('ADD SUCCESS');</script>")
 		}
+		c.TplName = "index.html"
 	} else if c.Ctx.Request.Method == "GET" {
 		////logs.Debug("Insert return: %s", id)
 		c.TplName = "publish.html"
 	}
-
-
 }
 
-
+func (c *UserController) ShowIndex() {
+	c.TplName = "index.html"
+}
 
 
 

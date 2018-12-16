@@ -91,6 +91,7 @@ func (c *UserController) ShowDetail() {
 		c.Data["dishes"] = message[0].Dishes
 		c.Data["price"] = message[0].Price
 		c.Data["state"] = message[0].Flag
+		c.Data["id"] = message[0].Txhash
 	}
 	c.TplName = "detail.html"
 }
@@ -145,12 +146,15 @@ func (c *UserController) Check() {
 func (c *UserController) UpdateFlagToOne() {
 	//txhashstring := c.GetString("txhash")
 	//txhash, err := strconv.Atoi(txhashstring)
+	//logs.Debug("flag:%s", txhash)
 	txhash, err := strconv.Atoi("1")
 	if err != nil {
 		panic(err)
 	}
 
 	order := &models.Order{Txhash:txhash}
+	order.ReadDBOne(txhash)
+	logs.Debug(order.ReadDBOne(txhash))
 	order.UpdateFlag("1")
 }
 

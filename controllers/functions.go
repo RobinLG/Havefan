@@ -71,9 +71,15 @@ func (c *UserController) ShowIndex() {
 
 func (c *UserController) ShowDetail() {
 
+	txhash_ := c.GetString("txhash")
+	txhash, err := strconv.Atoi(txhash_)
+	if err != nil {
+		panic(err)
+	}
+	logs.Debug("showdetail-txhash:%s", txhash)
 	order := &models.Order{}
 
-	if message, err := order.ReadDBOne(1); err != nil {
+	if message, err := order.ReadDBOne(txhash); err != nil {
 		logs.Debug(err)
 		// Actually, here should be done a deal of error. But now, I deal it simplify.
 		panic(err)

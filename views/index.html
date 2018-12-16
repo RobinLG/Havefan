@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						{
 						    var str = address[i];
                             document.getElementById("name"+j).innerText=str;
-                            document.getElementById("price"+j).innerText=price[i];
+                            document.getElementById("price"+j).innerText=price[i] + "XEM";
                             switch (state[i]) {
 								case "0":
 								    document.getElementById("state"+j).innerText="预订";
@@ -111,13 +111,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="specials">
 				<div class="special-top">
 					<div class="col-md-3 special-in">
-						<a href="/detail" ><img src="../static/images/pi2.jpg" class="img-responsive" alt="">
+						<a href="/detail?txhash=1" ><img src="../static/images/pi2.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="/detail" id = "name1">烤肉大餐——{{.length}}</a></h5>
+						<h5><a href="/detail?txhash=1" id = "name1">烤肉大餐——{{.length}}</a></h5>
 						<p id = "price1">10XEM</p>
 						<div class="details-in">
-							<a href="/detail" class="details" id = "state1">详细</a>
+							<a href="/detail?txhash=1" class="details" id = "state1">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">

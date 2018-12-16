@@ -160,15 +160,18 @@ func (c *UserController) UpdateFlagToOne() {
 }
 
 func (c *UserController) UpdateFlagToTwo() {
-	//txhashstring := c.GetString("txhash")
-	//txhash, err := strconv.Atoi(txhashstring)
-	txhash, err := strconv.Atoi("1")
+	txhashstring := c.GetString("txhash")
+	txhash, err := strconv.Atoi(txhashstring)
+	//txhash, err := strconv.Atoi("1")
 	if err != nil {
 		panic(err)
 	}
 
 	order := &models.Order{Txhash:txhash}
-	order.UpdateFlag("2")
+	order.Flag = "2"
+	order.UpdateFlag("flag")
+
+	c.Redirect("index.html", 302)
 }
 
 

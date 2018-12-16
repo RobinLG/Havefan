@@ -54,14 +54,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			showAndHidden3();
 		}
 	});
+
+
+
     function press()
     {
         console.log("click o");
         send();
-        setTimeout(()=>{
-            document.getElementById("send").click();
-        },6000)
+        // setTimeout(()=>{
+        //     document.getElementById("send").click();
+        // },10000)
     };
+
+
+
+
 	function showAndHidden1(){
 	var div1=document.getElementById("booking");
 	var div2=document.getElementById("comment");
@@ -253,9 +260,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="form-group">
 							<fieldset>
 								{{/*<button class="btn btn-success" style="width:100%;" id="send">预定</button>*/}}
-                                {{/*<a class="btn btn-success" style="width:100%;" onclick="press()">预订</a>*/}}
-                                {{/*<span><input type="submit" value="预订" id="send" style="visibility: hidden;"></span>*/}}
-									<span><input type="submit" value="预订" id="send"></span>
+                                <a class="btn btn-success" style="width:100%;" onclick="press()">上链</a>
+                                <span><input type="submit" value="预订" id="send"></span>
+
 							</fieldset>
 						</div>
 					  </div>

@@ -75,8 +75,8 @@
 				} else {
 					alert(res.message);
 					console.log(res);
-					window.close("../views/detail.html");
-					window.open("../views/index.html");
+					// window.close("../views/detail.html");
+					// window.open("../views/index.html");
 				}
 			}, function(err) {
 				alert(err);

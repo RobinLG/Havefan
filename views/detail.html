@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
-		var state = 1;
+		var state = {{.state}};
 		if(state == 0)
 		{
 			showAndHidden1();
@@ -191,15 +191,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="text-in" style="margin-bottom: 1em;margin-top: 1em">				
 						<div class="single-men">
 							<h5>发布者</h5>
-							<p>发布者地址</p>
+							<p>{{.address}}</p>
 							<h5>就餐时间</h5>
-							<p>2018-12-31 11:30</p>
+							<p>{{.time}}</p>
 							<h5>就餐地点</h5>
-							<p>成都市高新区梓州大道，中的英伦世邦</p>
+							<p>{{.location}}</p>
 							<h5>就餐价格</h5>
-							<p>100 XEM</p>
+							<p>{{.price}} XEM</p>
 							<h5>菜品</h5>
-							<p>大杂蟹</p>
+							<p>{{.dishes}}</p>
 						</div>
 				</div>
 

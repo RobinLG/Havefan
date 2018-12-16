@@ -35,11 +35,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         var el = document.getElementById('link1');
                         el.setAttribute('href', '/detail?txhash=1');
 
-						for(i=len-1,j=1; i >= len - 8; i--,j++)
+						for(i=len,j=1; i > len - 8; i--,j++)
 						{
-						    var str = address[i];
-                            document.getElementById("name"+j).innerText=str;
-                            document.getElementById("price"+j).innerText=price[i] + "XEM";
+                            document.getElementById("name"+j).innerText=address[i-1];
+                            document.getElementById("price"+j).innerText=price[i-1] + "XEM";
                             document.getElementById("name"+j).setAttribute('href', '/detail?txhash='+i);
                             document.getElementById("state"+j).setAttribute('href', '/detail?txhash='+i);
                             document.getElementById("state"+j).setAttribute('href', '/detail?txhash='+i);

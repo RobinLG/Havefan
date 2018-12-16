@@ -55,7 +55,7 @@ func (c *UserController) ShowIndex() {
 	} else {
 		logs.Debug("showindex messages:%s", messages)
 		for _, v := range messages {
-			addresses = append(addresses, v.Address)
+			addresses = append(addresses, v.Location)
 			flags = append(flags, v.Flag)
 			prices = append(prices, v.Price)
 		}
@@ -84,13 +84,14 @@ func (c *UserController) ShowDetail() {
 		// Actually, here should be done a deal of error. But now, I deal it simplify.
 		panic(err)
 	} else {
-		logs.Debug("showindex message:%s", message)
-		c.Data["message"] = message
-		c.Data["message"] = message
-		c.Data["message"] = message
-		c.Data["message"] = message
+		logs.Debug("showindex message:%s", message[0])
+		c.Data["address"] = message[0].Address
+		c.Data["time"] = message[0].Time
+		c.Data["location"] = message[0].Location
+		c.Data["dishes"] = message[0].Dishes
+		c.Data["price"] = message[0].Price
+		c.Data["state"] = message[0].Flag
 	}
-	//c.Data["message"] = message
 	c.TplName = "detail.html"
 }
 

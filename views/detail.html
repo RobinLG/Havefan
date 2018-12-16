@@ -39,7 +39,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		});
-		var state = {{.state}};
+		// var state = {{.state}};
+		var state = 1;
 		if(state == 0)
 		{
 			showAndHidden1();
@@ -210,9 +211,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 				</div>
 
-        		<div class="comments-area" id="booking" style="display:block;">
+        		<div class="contact-left" id="booking" style="display:block;">
                     <form action="/changeflagone" method="post">
-					<div class="col-md-6">
+					<div class="">
 						<div class="form-group">
 							<fieldset>
 								<label>Recipient</label>
@@ -232,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</fieldset>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="">
 						<div class="form-group">
 							<fieldset>
 								<label>Fee</label>
@@ -262,8 +263,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				
 
-				<div class="comments-area" id="comment" style="display:none;">
-					<div class="col-md-6">
+				<div class="contact-left" id="comment" style="display:none;">
+					<div class="">
 						<div class="form-group">
 							<fieldset>
 								<label>评分</label>
@@ -285,55 +286,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         	<span>评语</span>
                             <textarea name="dishes" id="dishes"></textarea>
                         </div>
-                        <span><input type="submit" value="提交" id="insql" style="visibility: hidden;"></span>
+                        <span><input type="submit" value="提交"></span>
 					</div>
 				</div>
 
 
-				<div class="comments-area" id="show" style="display:none;">
-						<div class="col-md-6">
+				<div class="contact-left" id="show" style="display:none;">
+						<div class="">
 							<div class="form-group">
 								<fieldset>
-									<label>Recipient</label>
-									<input class="form-control" type="text" id="recipient"/>
+									<label>评分</label>
+									<p>五星好评</p>
 								</fieldset>
 							</div>
 							<div class="form-group">
 								<fieldset>
-									<label>Amount</label>
-									<input  class="form-control" type="text" id="amount"/>
+									<label>评语</label>
+									<p>主人很亲切，聊得很开心，饭菜很合口。一次不错的用餐体验。值得推荐</p>
 								</fieldset>
 							</div>
-							<div class="form-group">
-								<fieldset>
-									<label>Message</label>
-									<textarea  class="form-control" rows="5" cols="25" id="message"></textarea>
-								</fieldset>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<fieldset>
-									<label>Fee</label>
-									<p class="form-control-static" type="text">
-										<span id="fee">
-										</span> <small><b>XEM</b></small>
-									</p>
-								</fieldset>
-							</div>
-							<div class="form-group">
-								<fieldset>
-									<label>Private key</label>
-									<input  class="form-control" type="password" id="privateKey" />
-								</fieldset>
-							</div>
-							<div class="form-group">
-								<fieldset>
-									<button class="btn btn-success" style="width:100%;" id="send2">预定133333333</button>
-								</fieldset>
-							</div>
-						  </div>
 					</div>
+				</div>
 				
 			</div>
 				<div class="col-md-3 single-bottom">

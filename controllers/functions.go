@@ -144,10 +144,10 @@ func (c *UserController) Check() {
 }
 
 func (c *UserController) UpdateFlagToOne() {
-	//txhashstring := c.GetString("txhash")
-	//txhash, err := strconv.Atoi(txhashstring)
-	//logs.Debug("flag:%s", txhash)
-	txhash, err := strconv.Atoi("1")
+	txhashstring := c.GetString("txhash")
+	txhash, err := strconv.Atoi(txhashstring)
+	logs.Debug("flag:%s", txhash)
+	//txhash, err := strconv.Atoi("1")
 	if err != nil {
 		panic(err)
 	}

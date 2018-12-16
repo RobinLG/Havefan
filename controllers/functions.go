@@ -153,9 +153,10 @@ func (c *UserController) UpdateFlagToOne() {
 	}
 
 	order := &models.Order{Txhash:txhash}
-	order.ReadDBOne(txhash)
-	logs.Debug(order.ReadDBOne(txhash))
-	order.UpdateFlag("1")
+	order.Flag = "1"
+	order.UpdateFlag("flag")
+
+	c.Redirect("index.html", 302)
 }
 
 func (c *UserController) UpdateFlagToTwo() {

@@ -84,9 +84,13 @@ func (c *UserController) ShowDetail() {
 		// Actually, here should be done a deal of error. But now, I deal it simplify.
 		panic(err)
 	} else {
-		c.Data["message"] = message
 		logs.Debug("showindex message:%s", message)
+		c.Data["message"] = message
+		c.Data["message"] = message
+		c.Data["message"] = message
+		c.Data["message"] = message
 	}
+	//c.Data["message"] = message
 	c.TplName = "detail.html"
 }
 

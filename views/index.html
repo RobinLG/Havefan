@@ -31,11 +31,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						var price = {{.prices}};
 						var i,j;
 						var state = {{.flags}};
+
+                        var el = document.getElementById('link1');
+                        el.setAttribute('href', '/detail?txhash=1');
+
 						for(i=len-1,j=1; i >= len - 8; i--,j++)
 						{
 						    var str = address[i];
                             document.getElementById("name"+j).innerText=str;
                             document.getElementById("price"+j).innerText=price[i] + "XEM";
+                            document.getElementById("name"+j).setAttribute('href', '/detail?txhash='+i);
+                            document.getElementById("state"+j).setAttribute('href', '/detail?txhash='+i);
+                            document.getElementById("state"+j).setAttribute('href', '/detail?txhash='+i);
+                            document.getElementById("link"+j).setAttribute('href', '/detail?txhash='+i);
                             switch (state[i]) {
 								case "0":
 								    document.getElementById("state"+j).innerText="预订";
@@ -111,17 +119,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="specials">
 				<div class="special-top">
 					<div class="col-md-3 special-in">
-						<a href="/detail?txhash=1" ><img src="../static/images/pi2.jpg" class="img-responsive" alt="">
+						<a href="/detail" id = "link1"><img src="../static/images/pi2.jpg" class="img-responsive" alt="">
 						
 							</a>
-						<h5><a href="/detail?txhash=1" id = "name1">烤肉大餐——{{.length}}</a></h5>
+						<h5><a href="/detail" id = "name1">烤肉大餐——{{.length}}</a></h5>
 						<p id = "price1">10XEM</p>
 						<div class="details-in">
-							<a href="/detail?txhash=1" class="details" id = "state1">详细</a>
+							<a href="/detail" class="details" id = "state1">详细</a>
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link2"><img src="../static/images/pi.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name2">烤肉大餐——天府一街</a></h5>
@@ -131,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi1.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link3"><img src="../static/images/pi1.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name3">烤肉大餐——天府一街</a></h5>
@@ -141,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi4.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link4"><img src="../static/images/pi4.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name4">烤肉大餐——天府一街</a></h5>
@@ -154,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			<div class="special-top">
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi3.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link5"><img src="../static/images/pi3.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name5">烤肉大餐——天府一街</a></h5>
@@ -164,7 +172,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi7.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link6"><img src="../static/images/pi7.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name6">烤肉大餐——天府一街</a></h5>
@@ -174,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi6.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link7"><img src="../static/images/pi6.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name7">烤肉大餐——天府一街</a></h5>
@@ -184,7 +192,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					<div class="col-md-3 special-in">
-						<a href="detail.html" ><img src="../static/images/pi5.jpg" class="img-responsive" alt="">
+						<a href="detail.html" id = "link8"><img src="../static/images/pi5.jpg" class="img-responsive" alt="">
 						
 							</a>
 						<h5><a href="detail.html" id = "name8">烤肉大餐——天府一街</a></h5>

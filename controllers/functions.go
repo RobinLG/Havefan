@@ -146,6 +146,9 @@ func (c *UserController) Check() {
 func (c *UserController) UpdateFlagToOne() {
 	txhashstring := c.GetString("txhash")
 	txhash, err := strconv.Atoi(txhashstring)
+
+	flag := c.GetString("flag")
+
 	logs.Debug("flag:%s", txhash)
 	//txhash, err := strconv.Atoi("1")
 	if err != nil {
@@ -153,12 +156,14 @@ func (c *UserController) UpdateFlagToOne() {
 	}
 
 	order := &models.Order{Txhash:txhash}
-	order.Flag = "1"
+	order.Flag = flag
 	order.UpdateFlag("flag")
 
 	c.Redirect("index.html", 302)
 }
 
+
+/*
 func (c *UserController) UpdateFlagToTwo() {
 	txhashstring := c.GetString("txhash")
 	txhash, err := strconv.Atoi(txhashstring)
@@ -175,7 +180,6 @@ func (c *UserController) UpdateFlagToTwo() {
 }
 
 
-/*
 
 func (c *UserController) Login() {
 	if c.Ctx.Request.Method == "POST" {

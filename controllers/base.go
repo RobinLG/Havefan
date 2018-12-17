@@ -20,7 +20,6 @@ func (p *baseController) Perpare() {
 	} else {
 		p.Data["Username"] = p.GetSession("username")
 		p.Data["url"] = "about/link.html"
-		p.Data["bulletin"] = "bulletin.html"
 		p.TplName = "main.html"
 	}
 }
